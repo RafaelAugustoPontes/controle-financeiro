@@ -1,29 +1,20 @@
 package com.example.controle.domain.flow;
 
-import com.example.controle.domain.transaction.TransactionRules;
+import com.example.controle.domain.rules.RuleBase;
 
 public abstract class FlowBase {
 
-    public FlowResult executeDefault() {
+    public FlowResult executeDefault(final FlowContextSpec context) {
         RuleBase rules = buildRules();
-        var result = rules.evaluate(null);
+        var result = rules.evaluate(context);
         if (result.isSuccess()) {
-            ex
+            
         }
         return null;
     }
 
     public abstract RuleBase buildRules();
 
-    public abstract void execute();
-
-    public static void main(String[] args) {
-        TransactionRules rules = new TransactionRules();
-        RuleBase loader = rules.validateTest();
-        RuleBase chain = rules.validateTest()
-            .next(rules.validateTestOther());
-        loader.next(chain);
-        loader.execute(null);
-    }
+    public abstract void execute(final FlowContextSpec context);
 
 }

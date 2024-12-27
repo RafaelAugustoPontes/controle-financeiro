@@ -7,6 +7,7 @@ public class MongoAdapter implements DatabasePort{
 
     @Override
     public void saveTransaction(Transaction transaction) {
+        //TODO criar conexão com o banco de dados
         System.out.println("Transaction saved");
     }
 

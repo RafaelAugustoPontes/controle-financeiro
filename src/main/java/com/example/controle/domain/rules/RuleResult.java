@@ -1,4 +1,4 @@
-package com.example.controle.domain.flow;
+package com.example.controle.domain.rules;
 
 public class RuleResult {
 
