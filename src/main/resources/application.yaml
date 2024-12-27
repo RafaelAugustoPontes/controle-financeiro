@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: controle-financeiro
+server:
+  port: 8080
+  servlet:
+    context-path: /controles-financeiros
