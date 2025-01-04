@@ -5,9 +5,8 @@ import com.example.controle.domain.rules.RuleResult;
 
 public abstract class FlowBase {
 
-    public FlowResult executeDefault(final FlowContextSpec context) {
+    public void executeDefault(final FlowContextSpec context) {
        execute(context);
-       return null;
     }
 
     public RuleResult validate(final FlowContextSpec context) {
@@ -16,8 +15,8 @@ public abstract class FlowBase {
         return evaluate;
     }
 
-    public abstract RuleBase buildRules();
+    protected abstract RuleBase buildRules();
 
-    public abstract void execute(final FlowContextSpec context);
+    protected abstract void execute(final FlowContextSpec context);
 
 }

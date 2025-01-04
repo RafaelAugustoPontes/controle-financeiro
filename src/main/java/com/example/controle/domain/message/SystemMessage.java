@@ -7,7 +7,7 @@ import lombok.Getter;
 @Builder
 @Getter
 public class SystemMessage {
-
+    private final MessageHeader header;
     private final BaseMessage message;
 
 }
